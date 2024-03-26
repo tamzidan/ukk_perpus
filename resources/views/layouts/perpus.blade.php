@@ -191,7 +191,9 @@
         </nav>
       </header>
       <!--  Header End -->
+      <div class="py-5">
       @yield('content')
+    </div>
     </div>
   </div>
   <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
