@@ -52,9 +52,9 @@ Route::middleware(['auth','role:admin']) ->group(function () {
     Route::post('/peminjaman/selesai/{id}', [PeminjamanController::class, 'kembalikanBuku'])->name('peminjaman.kembalikan');
     Route::get('/print', [PeminjamanController::class, 'print'])->name('print');
 
-    Route::get('/user', [UserController::class, 'index'])->name('user.index');
-    Route::get('/user/tambah', [UserController::class, 'create'])->name('user.create');
-    Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
+    Route::get('/user', [UserController::class, 'index'])->name('users.index');
+    Route::get('/user/tambah', [UserController::class, 'create'])->name('users.create');
+    Route::post('/user/store', [UserController::class, 'store'])->name('users.store');
 });
 
 //user

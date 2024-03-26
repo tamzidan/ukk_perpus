@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Spatie\Permission\Contracts\Role;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -22,20 +22,19 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-    $request->validate([
-    'name' => 'required|string|max:255',
-    'email' => 'required|email|unique:users,email',
-    'nama' => 'required|string|min:8',
-    'roles' => 'required|array',
-    ]);
-    $user = new User();
-    $user-> name = $request;
-    $user-> email = $request->email;
-    $user-> passsword = bcrypt($request->password);
-    $user->save();
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:8',
+            'roles' => 'required|array',
+        ]);
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
 
-    $user->assignRole($request->roles);
-    return redirect()->route('user.index')->with('succes', 'user berhasil ditambahkan');
+        $user->assignRole($request->roles);
+        return redirect()->route('users.index')->with('succes', 'user berhasil ditambahkan');
     }
 }
-
