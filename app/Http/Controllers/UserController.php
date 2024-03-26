@@ -12,7 +12,7 @@ class UserController extends Controller
     {
         $users = User::all();
         $roles = Role::all();
-        return view('user.user_index', compact('users', 'roles');)
+        return view('user.user_index', compact('users', 'roles'));
     }
     public function create()
     {

@@ -3,7 +3,8 @@
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\PeminjamanController; 
+use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//admin
 Route::middleware(['auth','role:admin']) ->group(function () {
     Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
     Route::get('/kategori/tambah', [KategoriController::class, 'create'])->name('kategori.create');
@@ -49,6 +51,10 @@ Route::middleware(['auth','role:admin']) ->group(function () {
     Route::post('/peminjaman/store', [PeminjamanController::class, 'storePeminjaman'])->name('peminjaman.store');
     Route::post('/peminjaman/selesai/{id}', [PeminjamanController::class, 'kembalikanBuku'])->name('peminjaman.kembalikan');
     Route::get('/print', [PeminjamanController::class, 'print'])->name('print');
+
+    Route::get('/user', [UserController::class, 'index'])->name('user.index');
+    Route::get('/user/tambah', [UserController::class, 'create'])->name('user.create');
+    Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
 });
 
 //user
