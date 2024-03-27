@@ -26,12 +26,12 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="tanggal_peminjaman" class="block text-sm font-medium text-gray-700">Tanggal Peminjaman:</label>
+                        <label for="tanggal_peminjaman" class="block text-sm font-medium text-gray-700" value="{{ date('Y-m-d') }}" readonly>Tanggal Peminjaman:</label>
                         <input type="date" required name="tanggal_peminjaman" id="tanggal_peminjaman" class="mt-1 p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300">
                     </div>
 
                     <div class="mb-3">
-                        <label for="tanggal_pengembalian" class="block text-sm font-medium text-gray-700">Tanggal Pengembalian:</label>
+                        <label for="tanggal_pengembalian" class="block text-sm font-medium text-gray-700" value="{{ \Carbon\Carbon::parse(date('Y-m-d'))->addDays()->format('Y-m-d') }}">Tanggal Pengembalian:</label>
                         <input type="date" required name="tanggal_pengembalian" id="tanggal_pengembalian" class="mt-1 p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300">
                     </div>
                     <br>
