@@ -3,6 +3,7 @@
 @section('content')
 <div class="py-5">
     <div class="container">
+        <h1 class="h3 font-weight-bold mb-4">Dashboard Tamzidan</h1>
             @php
                 $totalBuku = \App\Models\Buku::count();
                 $totalPeminjam = \App\Models\Peminjaman::count();

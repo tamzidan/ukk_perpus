@@ -5,9 +5,9 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">List Buku</div>
-
                     <div class="card-body">
+                        <h1 class="h3 font-weight-bold mb-4">Data Buku</h1>
+
                         <div class="mb-4">
                             <a href="{{ route('buku.create') }}" class="btn btn-info">
                                 + Tambah Data Buku

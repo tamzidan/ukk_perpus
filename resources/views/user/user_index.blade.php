@@ -5,8 +5,8 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">User</div>
-                    <div class="card-header">
+                    <div class="card-body">
+                        <h1 class="h3 font-weight-bold mb-4">Data User</h1>
                         <div class="mb-4">
                             <a href="{{ route('users.create') }}" class="btn btn-primary">
                                 + Tambah Pengguna</a>

@@ -7,7 +7,8 @@
             <div class="card">
                 <div class="card-header">
                     <div class="mb-4">
-
+                        <h1 class="h3 font-weight-bold mb-4">Kategori</h1>
+    
                         <a href="{{ route('kategori.create') }}" class="btn btn-info">
                             + Tambah Data Kategori
                         </a>
