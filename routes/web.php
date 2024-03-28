@@ -32,13 +32,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('logout', function ()
-{
-    auth()->logout();
-    Session()->flush();
-    
-    return Redirect::to('/');
-})->name('logout');
+// Route::get('logout', function ()
+// {
+//     auth()->logout();
+//     Session()->flush();
+
+//     return Redirect::to('/');
+// })->name('logout');
 
 //admin
 Route::middleware(['auth','role:admin']) ->group(function () {

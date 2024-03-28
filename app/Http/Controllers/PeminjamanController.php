@@ -15,14 +15,14 @@ class PeminjamanController extends Controller
     public function index()
     {
         $peminjaman = Peminjaman::with('user', 'buku')->get();
-        return view('buku.peminjaman', compact('peminjaman'));
+        return view('peminjaman.peminjaman', compact('peminjaman'));
     }
 
     public function tambahPeminjaman()
     {
         $users = User::all();
         $buku = Buku::all();
-        return view('buku.create_peminjaman', compact('users', 'buku'));
+        return view('peminjaman.create_peminjaman', compact('users', 'buku'));
     }
 
     public function storePeminjaman(Request $request){
@@ -63,7 +63,7 @@ class PeminjamanController extends Controller
             'buku'  => $buku,
             'peminjaman' => $peminjaman,
         ];
-        $pdf = PDF::loadView('buku.format', $data)
+        $pdf = PDF::loadView('peminjaman.format', $data)
         ->setPaper('a4');
         return $pdf->download('Laporan.pdf');
         
@@ -79,7 +79,7 @@ class PeminjamanController extends Controller
             ->where('user_id', $userId)
             ->get();
 
-        return view('buku.user_index', compact('peminjaman'));
+        return view('peminjaman.user_index', compact('peminjaman'));
     }
 
     
