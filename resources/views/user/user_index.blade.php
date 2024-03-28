@@ -40,11 +40,11 @@
                                             <form method="post" action="{{route('users.destroy', $u->id)}}">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">
-                                                <i class="fa fa-trash"></i>    
+                                                <button type="submit" class="btn border border-1">
+                                                <img src="../assets/images/edithapus/delete.svg" alt="">
                                                 </button>
                                         
-                                            <a class="btn btn-warning" href="{{route('users.edit', $u->id)}}">Edit</a>
+                                            <a class="btn border border-1" href="{{route('users.edit', $u->id)}}"><img src="../assets/images/edithapus/edit.svg" alt=""></a>
                                         </td>
                                     </form>
                                     </tr>

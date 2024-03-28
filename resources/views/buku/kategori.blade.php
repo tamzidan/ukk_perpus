@@ -30,11 +30,9 @@
                                     <form method="post" action="{{route('kategori.destroy', $k->id)}}">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">
-                                        <i class="fa fa-trash"></i>    
-                                        Hapus</button>
+                                        <button type="submit" class="btn border border-1"><img src="../assets/images/edithapus/delete.svg" alt=""></button>
                                     
-                                    <a class="btn btn-warning" href="{{route('kategori.edit', $k->id)}}">Edit</a>
+                                    <a class="btn border border-1" href="{{route('kategori.edit', $k->id)}}"><img src="../assets/images/edithapus/edit.svg" alt=""></a>
                                 </td>
                                 </form>
                             </tr>

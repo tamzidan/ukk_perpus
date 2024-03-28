@@ -32,7 +32,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::post('/logout', [UserController::class, 'logout'])->middleware('checkLogoutPermission');
+Route::get('logout', function ()
+{
+    auth()->logout();
+    Session()->flush();
+    
+    return Redirect::to('/');
+})->name('logout');
 
 //admin
 Route::middleware(['auth','role:admin']) ->group(function () {
@@ -53,6 +59,7 @@ Route::middleware(['auth','role:admin']) ->group(function () {
     Route::post('/peminjaman/store', [PeminjamanController::class, 'storePeminjaman'])->name('peminjaman.store');
     Route::post('/peminjaman/selesai/{id}', [PeminjamanController::class, 'kembalikanBuku'])->name('peminjaman.kembalikan');
     Route::get('/print', [PeminjamanController::class, 'print'])->name('print');
+    
 
     Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/user', [UserController::class, 'index'])->name('users.index');
