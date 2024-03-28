@@ -65,13 +65,13 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/user/peminjaman', [PeminjamanController::class, 'userPeminjaman'])->name('peminjaman.user');
 });
 
-Route::get('logout', function ()
-{
+Route::get('logout', function () {
     auth()->logout();
     Session()->flush();
 
-    return Redirect::to('/');
+    return redirect('/');
 })->name('logout');
+
 
 // //user
 // Route::get('/user/peminjaman', [PeminjamanController::class, 'userPeminjaman'])->name('peminjaman.user')
