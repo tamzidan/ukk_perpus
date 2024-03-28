@@ -37,4 +37,22 @@ class UserController extends Controller
         $user->assignRole($request->roles);
         return redirect()->route('users.index')->with('succes', 'user berhasil ditambahkan');
     }
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+        $roles = Role::all();
+        return view('user.user_edit', compact('user', 'roles'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $users = User::findOrFail($id);
+        // $roles = Role::all();
+        $users->update($request->all());
+        $users->syncRoles($request->roles);
+
+        return redirect('/user');
+    }
+
+
 }

@@ -34,7 +34,7 @@
                                             @endforeach
                                         </td>   
                                         <td>
-                                            <a class="btn btn-info" href="#">Edit</a>
+                                            <a class="btn btn-info" href="{{route('users.edit', $u->id)}}">Edit</a>
                                         </td>
                                     </tr>
                                     @endforeach

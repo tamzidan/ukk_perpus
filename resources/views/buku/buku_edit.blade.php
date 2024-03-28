@@ -1,13 +1,15 @@
 @extends('layouts.perpus')
 
 @section('content')
-    <div class="container py-5">
+
+    <div class="container py-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card shadow-lg rounded-3">
                     <div class="card-header bg-primary text-white">
                         <h5 class="card-title mb-0">Edit Data Buku</h5>
                     </div>
+                    
                     <div class="card-body">
                         @if (session('success'))
                             <div class="alert alert-success" role="alert">

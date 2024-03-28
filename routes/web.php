@@ -32,6 +32,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::post('/logout', [UserController::class, 'logout'])->middleware('checkLogoutPermission');
+
 //admin
 Route::middleware(['auth','role:admin']) ->group(function () {
     Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
@@ -52,9 +54,15 @@ Route::middleware(['auth','role:admin']) ->group(function () {
     Route::post('/peminjaman/selesai/{id}', [PeminjamanController::class, 'kembalikanBuku'])->name('peminjaman.kembalikan');
     Route::get('/print', [PeminjamanController::class, 'print'])->name('print');
 
-    Route::get('/user', [UserController::class, 'index'])->name('users.index');
-    Route::get('/user/tambah', [UserController::class, 'create'])->name('users.create');
-    Route::post('/user/store', [UserController::class, 'store'])->name('users.store');
+    Route::middleware(['auth', 'role:admin'])->group(function () {
+        Route::get('/user', [UserController::class, 'index'])->name('users.index');
+        Route::get('/user/tambah', [UserController::class, 'create'])->name('users.create');
+        Route::post('/user/store', [UserController::class, 'store'])->name('users.store');
+        Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('users.edit');
+        Route::put('/user/update/{id}', [UserController::class, 'update'])->name('users.update');
+        Route::delete('/user/delete/{id}', [UserController::class, 'delete'])->name('users.delete');
+    });
+    
 });
 
 //user
