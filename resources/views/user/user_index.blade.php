@@ -43,7 +43,7 @@
                                                 <button type="submit" class="btn btn-danger">
                                                 <i class="fa fa-trash"></i>    
                                                 </button>
-                                            
+                                        
                                             <a class="btn btn-warning" href="{{route('users.edit', $u->id)}}">Edit</a>
                                         </td>
                                     </form>
