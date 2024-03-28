@@ -52,6 +52,14 @@ class UserController extends Controller
         $users->syncRoles($request->roles);
 
         return redirect('/user');
+        
+    }
+    public function destroy($id){
+        // Kategori::find($id)->destroy();
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect('/user');
     }
 
 
