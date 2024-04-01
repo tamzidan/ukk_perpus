@@ -1,5 +1,8 @@
 @extends('layouts.perpus')
 
+<head>
+    <title>TAMZIDAN | BUKU</title>
+</head>
 @section('content')
     <div class="container py-4">
         <div class="row justify-content-center">

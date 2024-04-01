@@ -1,5 +1,8 @@
 @extends('layouts.perpus')
 
+<head>
+    <title>TAMZIDAN | USER</title>
+</head>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">

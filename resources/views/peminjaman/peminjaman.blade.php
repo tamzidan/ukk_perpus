@@ -1,7 +1,7 @@
 @extends('layouts.perpus')
 
 <head>
-    <title>PERPUSTAKAAN | WEB | PEMINJAMAN</title>
+    <title>TAMZIDAN | PEMINJAMAN</title>
 </head>
 @section('content')
     <div class="container-fluid">
