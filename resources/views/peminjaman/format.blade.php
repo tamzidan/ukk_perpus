@@ -41,7 +41,7 @@
 
 <body>
     
-    <h2 style="font-size: 50pt;">Laporan Peminjaman Buku</h2>
+    <h2 style="font-size: 50pt;">Laporan Peminjaman Buku Tamzidan</h2>
 
     <table>
         <thead>
@@ -49,7 +49,9 @@
             
                 <th>Nama Peminjam</th>
                 <th>Buku yang Dipinjam</th>
-                <th>Tanggal Peminjaman</th>
+                <th>Tanggal Pinjaman</th>
+                <th>Tanggal Kembali</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
@@ -58,7 +60,8 @@
                 <td>{{ $p->user->name }}</td>
                 <td>{{ $p->buku->judul }}</td>
                 <td>{{ Carbon\Carbon::parse($p->tanggal_peminjaman )->format('d/M/Y')}}</td>
-
+                <td>{{ Carbon\Carbon::parse($p->tanggal_pengembalian )->format('d/M/Y')}}</td>
+                <td>{{ $p->status }}</td>
             </tr>
             @endforeach
         </tbody>

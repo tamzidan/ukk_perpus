@@ -31,8 +31,7 @@
                                 <a href="{{ route('peminjaman.tambah') }}" class="btn btn-primary">
                                     + Tambah Data Peminjaman
                                 </a>
-                                <a href="{{ route('print') }}" class="btn btn-primary">
-                                    <i class="fa  fa-download" style="font-size: 1pt"> &nbsp;Ekspor PDF</i></a>
+                                <a href="{{ route('print') }}" class="btn border border-1"><img src="assets/images/peminjaman/exportpdf.png" width="20" height="20" alt=""></a>
                             </div>
 
                             <table class="table table-bordered">
