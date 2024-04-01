@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tamzidan</title>
-  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/dark-logo.png" />
   <link rel="stylesheet" href="{{ asset('../assets/css/styles.min.css')}}" />
 </head>
 
@@ -55,7 +55,7 @@
             <li class="sidebar-item">
               <a class="sidebar-link" href="/buku" aria-expanded="false">
                 <span>
-                  <i class="ti ti-alert-circle"></i>
+                  <img src="/assets/images/dashboard/buku.png" width="20" height="20" alt="">
                 </span>
                 <span class="hide-menu">Data Buku</span>
               </a>
@@ -63,7 +63,7 @@
             <li class="sidebar-item">
               <a class="sidebar-link" href="/peminjaman" aria-expanded="false">
                 <span>
-                  <i class="ti ti-cards"></i>
+                  <img src="/assets/images/dashboard/peminjaman.png" width="20" height="20" alt="">
                 </span>
                 <span class="hide-menu">Data Peminjaman</span>
               </a>
@@ -71,7 +71,7 @@
             <li class="sidebar-item">
               <a class="sidebar-link" href="/user" aria-expanded="false">
                 <span>
-                  <i class="ti ti-file-description"></i>
+                  <img src="/assets/images/dashboard/user.png" width="20" height="20" alt="">
                 </span>
                 <span class="hide-menu">Users</span>
               </a>
