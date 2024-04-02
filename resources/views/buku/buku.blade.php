@@ -42,10 +42,11 @@
                                     <form method="post" action="{{route('buku.destroy', $b->id)}}">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn border border-1"><img src="../assets/images/edithapus/delete.svg" alt=""></button>
+                                        <button type="submit" class="btn border border-1"><img src="../assets/images/bukuicons/delete.svg" alt=""></button>
                                         
                                         
-                                    <a class="btn border border-1" href="{{route('buku.edit', $b->id)}}"><img src="../assets/images/edithapus/edit.svg" alt=""></a>
+                                    <a class="btn border border-1" href="{{route('buku.edit', $b->id)}}"><img src="../assets/images/bukuicons/edit.svg" alt=""></a>
+                                    <a class="btn border border-1" href="{{route('buku.detail', $b->id)}}"><img src="../assets/images/bukuicons/detail.png" width="20" height="20" alt=""></a>
                                     </form>
                                 </td>
                                     </tr>

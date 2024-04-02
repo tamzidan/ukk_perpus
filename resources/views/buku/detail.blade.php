@@ -32,6 +32,9 @@
                                 <td >{{$buku->tahun_terbit}}</td>
                             </tr>
                         </table>
+                        <a href="{{ route('buku') }}" class="btn btn-primary">
+                           Kembali
+                        </a>
                     </div>
                 </div>
             </div>

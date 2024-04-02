@@ -46,6 +46,7 @@ Route::middleware(['auth'], 'role:petugas|admin')->group(function () {
     Route::post('/buku/store', [BukuController::class, 'store'])->name('buku.store');
     Route::get('/buku/edit/{id}', [BukuController::class, 'edit'])->name('buku.edit');
     Route::put('/buku/update/{id}', [BukuController::class, 'update'])->name('buku.update');
+    Route::get('/buku/detail/{id}', [BukuController::class, 'detail'])->name('buku.detail');
     Route::delete('/buku/delete/{id}', [BukuController::class, 'delete'])->name('buku.destroy');
     Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
     Route::get('/kategori/tambah', [KategoriController::class, 'create'])->name('kategori.create');
@@ -58,6 +59,9 @@ Route::middleware(['auth'], 'role:petugas|admin')->group(function () {
     Route::post('/peminjaman/store', [PeminjamanController::class, 'storePeminjaman'])->name('peminjaman.store');
     Route::post('/selesai/{id}', [PeminjamanController::class, 'kembalikanBuku'])->name('peminjaman.kembalikan');
     Route::get('/print', [PeminjamanController::class, 'print'])->name('print');
+    Route::get('/peminjaman/bayardenda/{id}', [PeminjamanController::class, 'bayarDenda'])->name('peminjaman.denda');
+    Route::get('/peminjaman/detail/{id}', [PeminjamanController::class, 'detailpeminjaman'])->name('peminjaman.detail');
+
 });
 
 //user

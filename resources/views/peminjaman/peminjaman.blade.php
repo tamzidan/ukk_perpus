@@ -68,8 +68,14 @@
                                                         @csrf
                                                         <button type="submit" class="btn btn-primary">Kembalikan</button>
                                                     </form>
-                                                @else
-                                                    -
+                                                @elseif ($p->status === 'Denda')
+                                                <a href="{{ route('peminjaman.denda', $p->id) }}" class="btn btn-danger">
+                                                    Bayar Denda
+                                                </a>
+                                                @elseif ($p->status === 'Dikembalikan')
+                                                <a href="{{ route('peminjaman.detail', $p->id) }}" class="btn btn-primary">
+                                                    Detail
+                                                </a>    
                                                 @endif
                                             </td>
                                         </tr>

@@ -104,6 +104,21 @@ class PeminjamanController extends Controller
 
         return view('peminjaman.user_index', compact('peminjaman'));
     }
+    public function bayarDenda($id)
+    {
+        $peminjaman = Peminjaman::findOrFail($id);
+        $peminjaman -> status = 'Dikembalikan';
+        $peminjaman -> sekarang = now();
+        $peminjaman->save();
+
+        return redirect()->route('peminjaman.index')->with('succes', 'Denda berhasil dibayar');
+    }
+    public function detailpeminjaman($id)
+    {
+        $peminjaman = Peminjaman::find($id);
+        return view('peminjaman.detail', ['peminjaman' => $peminjaman]);
+    }
+
 
     
 }
